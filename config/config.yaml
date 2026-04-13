@@ -1,0 +1,12 @@
+video_source: 0
+confidence_threshold: 0.5
+max_age: 30
+n_init: 3
+resize_width: 1280
+imgsz: 640
+model_path: yolov8n.pt
+output_csv: output/tracking_log.csv
+window_title: Real-Time Object Tracking System
+device: auto
+tracker_max_cosine_distance: 0.2
+tracker_nn_budget: 100
