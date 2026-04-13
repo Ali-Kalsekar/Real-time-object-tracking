@@ -1,15 +1,39 @@
 # Real-Time Multi-Object Tracking System
 
-This project detects people in real time with YOLOv8 and tracks them with DeepSORT plus ReID embeddings. It supports webcam input or a video file, displays tracking boxes and IDs, shows FPS, and writes tracking metadata to CSV.
+Real-time person detection and tracking with YOLOv8, DeepSORT, and ReID.
+
+## Overview
+
+This project detects people in real time, assigns stable tracking IDs, displays bounding boxes and FPS, and logs track data to CSV. It supports webcam input and video files, and it can use CUDA automatically when a compatible GPU is available.
 
 ## Features
 
 - YOLOv8 person detection
-- DeepSORT multi-object tracking with ReID
-- Real-time FPS display
+- DeepSORT tracking with ReID embeddings
+- Persistent track IDs across frames
 - Webcam or video-file input
-- CSV logging of track history
-- Optional CUDA acceleration when available
+- On-screen bounding boxes, IDs, confidence, and FPS
+- CSV logging of timestamped track positions
+- Optional GPU acceleration with CUDA
+
+## Project Structure
+
+```text
+project/
+├── main.py
+├── detector/
+├── tracker/
+├── utils/
+├── config/
+├── output/
+└── requirements.txt
+```
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Run
 
@@ -17,15 +41,31 @@ This project detects people in real time with YOLOv8 and tracks them with DeepSO
 python main.py
 ```
 
-To use a video file, update `config/config.yaml`:
+## Configuration
+
+Update [config/config.yaml](config/config.yaml) to change runtime settings:
 
 ```yaml
-video_source: path/to/video.mp4
+video_source: 0
+confidence_threshold: 0.5
+max_age: 30
 ```
 
-## GitHub setup
+Set `video_source` to a file path if you want to process a video instead of a webcam.
 
-1. Initialize the repository.
-2. Commit the source files.
-3. Create a new empty GitHub repository.
-4. Add the GitHub remote and push the `main` branch.
+## Output
+
+The system writes tracking logs to [output/tracking_log.csv](output/tracking_log.csv) with these columns:
+
+- timestamp
+- object_id
+- x
+- y
+- width
+- height
+
+## Notes
+
+- Press `q` to exit the live window.
+- The first run may download the YOLOv8 model if it is not already available locally.
+- If CUDA is available, the application will use it automatically.
