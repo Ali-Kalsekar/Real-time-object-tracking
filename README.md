@@ -1,4 +1,5 @@
 # Real-Time Multi-Object Tracking System
+> Last automated login update: 2026-04-14 12:41:38
 
 Real-time person detection and tracking with YOLOv8, DeepSORT, and ReID.
 
@@ -20,13 +21,13 @@ This project detects people in real time, assigns stable tracking IDs, displays 
 
 ```text
 project/
-├── main.py
-├── detector/
-├── tracker/
-├── utils/
-├── config/
-├── output/
-└── requirements.txt
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ main.py
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ detector/
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ tracker/
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ utils/
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ config/
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ output/
+Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ requirements.txt
 ```
 
 ## Installation
