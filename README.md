@@ -1,5 +1,5 @@
 # Real-Time Multi-Object Tracking System
-> Last automated login update: 2026-10-02 07:25:04
+> Last automated login update: 2026-10-02 16:24:07
 
 
 Real-time person detection and tracking with YOLOv8, DeepSORT, and ReID.
